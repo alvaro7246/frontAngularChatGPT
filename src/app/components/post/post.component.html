@@ -1,0 +1,103 @@
+<app-header></app-header>
+<div style="background-color: #f7f2ed;">
+    <br>
+    <div class="container">
+        <button type="button" class="btn btn-info">Crear publicacion ChatGPT</button>
+        &nbsp;
+        <button type="button" class="btn btn-primary">Recuperar preferencias de publicaciones anteriores</button>
+
+            <!-- <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Elija el tema de la publicacion</label>
+                <textarea class="form-control" formControlName="tema" id="tema" rows="1"></textarea>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Tipo de publicacion que quiere crear</label>
+            <textarea class="form-control" formControlName="tipo" id="tipo" rows="1"></textarea>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Cantidad de caracteres de la publicacion</label>
+            <textarea class="form-control" formControlName="cantidad" id="cantidad" rows="1"></textarea>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Tono de la publicacion</label>
+            <select class="form-select" formControlName="tono" aria-label="Default select example">
+                <option selected>Seleecione el tono</option>
+                <option value="1">Informativo</option>
+                <option value="2">Amigable</option>
+                <option value="3">Inspirador</option>
+                <option value="4">Formal</option>
+                <option value="5">Reflexivo</option>
+            </select>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Presencia de Hashtag</label>
+            <select class="form-select" formControlName="opcionHashtag"  aria-label="Default select example">
+            
+                <option selected>Seleccione la opcion</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Hashtags que se incluiran</label>
+                <textarea class="form-control" formControlName="Hashtags" id="Hashtags" rows="1"></textarea>
+            </div>            -->
+
+
+    
+        
+            <form [formGroup]="formDatosPublicacion">
+                <div class="form-group">
+                  <label for="nombre">Escriba el tema de la publicacion:</label>
+                  <input type="text" class="form-control" id="nombre" formControlName="tema">
+                </div>
+                <div class="form-group">
+                  <label for="email">Tipo de publicacion que quiere crear:</label>
+                  <input type="text" class="form-control" id="email" formControlName="tipo">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Cantidad de caracteres de la publicacion:</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="cantidad">
+                  </div>
+                <div class="form-group">
+                <label for="opcion">Tono de la publicacion:</label>
+                <select class="form-control" id="opcion" formControlName="tono">
+                    <option value="" disabled selected>Selecciona el tono</option>
+                    <option value="Informativo">Informativo</option>
+                    <option value="Amigable">Amigable</option>
+                    <option value="Inspirador">Inspirador</option>
+                    <option value="Formal">Formal</option>
+                    <option value="Reflexivo">Reflexivo</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label for="opcion">Presencia de Hashtag:</label>
+                    <select class="form-control" id="opcion" formControlName="opcionHashtag">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    </div>
+                <div class="form-group">
+                  <label for="telefono">Hashtags que se incluiran:</label>
+                  <input type="text" class="form-control" id="telefono" formControlName="hashtags">
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+            </form>
+            <br>
+            <button type="button" (click)="GenerarPublicacion()" class="btn btn-info">Generar Publicacion</button>
+            &nbsp;
+            <button type="button" (click)="limpiar()" class="btn btn-danger">Cancelar</button>
+            <br>
+            <div>
+                <p>RESPUESTA:</p>
+                {{respuesta}}
+            </div>
+            <br>
+    </div>
+    
+    
+    <br>
+    <br><br>
+</div>
